@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
 class LockTicket {
 
     private int number = 30;
-    private final Lock lock = new ReentrantLock();
+    private final Lock lock = new ReentrantLock(true);
 
     public void sale() {
         lock.lock();
@@ -29,9 +29,10 @@ class LockTicket {
 }
 
 public class LockSaleTicket {
-    public static void main(String[] args) {
-        LockTicket lockTicket = new LockTicket();
 
+    public static void main(String[] args) {
+
+        LockTicket lockTicket = new LockTicket();
         new Thread(() -> {
             for (int i = 0; i < 40; i++) {
                 lockTicket.sale();

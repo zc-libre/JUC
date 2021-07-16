@@ -43,6 +43,7 @@ class LShare {
     }
 }
 public class LThreadCommunication {
+
     public static void main(String[] args) {
         LShare share = new LShare();
 
